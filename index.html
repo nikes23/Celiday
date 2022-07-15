@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #F0EBD0;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+  margin-top:100px;
+}
+.Zentrierung{
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  text-align:center;
+  margin-top: 50px;
+}
+
+.bgimg {
+  /*background-image: url("mountain.jpg");*/
+  /*height: 100%;*/
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: F0EBD0;*/
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+.button {
+  background-color: #B2474E;
+  border: none;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+</style>
+<body>
+
+<div class="bgimg">
+  <div class="" style="margin-top: 50px;">
+    <img src="logo.png" class="logo" width=400></img>
+  </div>
+  <div class="Zentrierung">
+    <h1 style="color: #B2474E">Es wird an etwas Wunderbarem gearbeitet!</h1>
+    <hr>
+    <p id="demo" style="font-size:30px;">242d 2h 57m 7s</p>
+  </div>
+</div>
+<div style="display: flex; justify-content: center;">
+<a href="darkside.html" class="button">FARBWECHSEL</a>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 14, 2023 15:37:25").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+</body>
+</html>
